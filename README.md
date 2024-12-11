@@ -85,29 +85,6 @@ UtakPera/
 
 Ensure that the `UtakPera.db` file is placed in the `assets` folder. The app will load this database file on startup.
 
-### TypeScript Configuration
-
-The `tsconfig.json` file is configured to support React Native and Expo:
-
-```json
-{
-  "extends": "expo/tsconfig.base",
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
-    "lib": ["dom", "esnext"],
-    "jsx": "react-native",
-    "strict": true,
-    "noEmit": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["./src", "./App.tsx"],
-  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
-}
-```
 
 ## 📦 Dependencies
 

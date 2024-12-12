@@ -77,24 +77,26 @@ export default function Home() {
     }
 
   return (
-    <ScrollView 
-      contentContainerStyle={{ 
-        padding:15, 
-        paddingVertical: 17,
-        backgroundColor: '#3A2073',
-        }}>
-      <TransactionSummary 
-        totalExpenses={transactionsByMonth.totalExpenses }
-        totalIncome={transactionsByMonth.totalIncome}  
-      />
-      <AddTransaction insertTransaction={insertTransaction} />
-      <TransactionsList 
-        categories={categories}
-        transactions={transactions}
-        deleteTransaction={deleteTransaction}
-        setTransactions={setTransactions}
-      />
-    </ScrollView>
+    <View style={{ flex: 1, backgroundColor: '#3A2073' }}>
+      <ScrollView 
+        style={{ backgroundColor: '#3A2073' }}
+        contentContainerStyle={{ 
+          padding: 15, 
+          paddingVertical: 17,
+          }}>
+        <TransactionSummary 
+          totalExpenses={transactionsByMonth.totalExpenses }
+          totalIncome={transactionsByMonth.totalIncome}  
+        />
+        <AddTransaction insertTransaction={insertTransaction} />
+        <TransactionsList 
+          categories={categories}
+          transactions={transactions}
+          deleteTransaction={deleteTransaction}
+          setTransactions={setTransactions}
+        />
+      </ScrollView>
+    </View>
   );
 }
 

@@ -66,43 +66,45 @@ export default function AddTransaction({
     <View style={{ marginBottom: 15 }}>
       {isAddingTransaction ? (
         <View>
-          <Card>
+            <Card style={{ backgroundColor: "#33102C" }}>
             <TextInput
               placeholder="$Amount"
-              style={{ fontSize: 32, marginBottom: 15, fontWeight: "bold" }}
+              placeholderTextColor="#fff"
+              style={{ color: "#ffff", fontSize: 32, marginBottom: 15, fontWeight: "bold" }}
               keyboardType="numeric"
               onChangeText={(text) => {
-                // Remove any non-numeric characters before setting the state
-                const numericValue = text.replace(/[^0-9.]/g, "");
-                setAmount(numericValue);
+              // Remove any non-numeric characters before setting the state
+              const numericValue = text.replace(/[^0-9.]/g, "");
+              setAmount(numericValue);
               }}
             />
             <TextInput
               placeholder="Description"
-              style={{ marginBottom: 15 }}
+              placeholderTextColor="#fff"
+              style={{ marginBottom: 15, color: "#fff" }}
               onChangeText={setDescription}
             />
-            <Text style={{ marginBottom: 6 }}>Select a entry type</Text>
+            <Text style={{ marginBottom: 6, color: "#fff" }}>Select a entry type</Text>
             <SegmentedControl
               values={["Expense", "Income"]}
               style={{ marginBottom: 15 }}
               selectedIndex={currentTab}
               onChange={(event) => {
-                setCurrentTab(event.nativeEvent.selectedSegmentIndex);
+              setCurrentTab(event.nativeEvent.selectedSegmentIndex);
               }}
             />
             {categories.map((cat) => (
               <CategoryButton
-                key={cat.name}
-                // @ts-ignore
-                id={cat.id}
-                title={cat.name}
-                isSelected={typeSelected === cat.name}
-                setTypeSelected={setTypeSelected}
-                setCategoryId={setCategoryId}
+              key={cat.name}
+              // @ts-ignore
+              id={cat.id}
+              title={cat.name}
+              isSelected={typeSelected === cat.name}
+              setTypeSelected={setTypeSelected}
+              setCategoryId={setCategoryId}
               />
             ))}
-          </Card>
+            </Card>
           <View
             style={{ flexDirection: "row", justifyContent: "space-around", gap: 15, paddingVertical: 15 }}
           >
@@ -164,7 +166,7 @@ function CategoryButton({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: isSelected ? "#007BFF20" : "#00000020",
+        backgroundColor: isSelected ? "#3A2073" : "#fff",
         borderRadius: 15,
         marginBottom: 6,
       }}
@@ -172,7 +174,7 @@ function CategoryButton({
       <Text
         style={{
           fontWeight: "700",
-          color: isSelected ? "#007BFF" : "#000000",
+          color: isSelected ? "#fff" : "#000000",
           marginLeft: 5,
         }}
       >
@@ -196,7 +198,6 @@ function AddButton({
         height: 40,
         flexDirection: "row",
         alignItems: "center",
-
         justifyContent: "center",
         borderRadius: 15,
       }}

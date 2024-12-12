@@ -66,7 +66,17 @@ export default function App() {
           databaseName='UtakPera.db'
           useSuspense      
           >
-            <Stack.Navigator>
+            <Stack.Navigator
+              screenOptions={{
+                headerStyle: {
+                  backgroundColor: '#8C4688',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                  fontWeight: 'bold',
+                },
+              }}
+            >
               <Stack.Screen 
                 name="Home" 
                 component={Home} 

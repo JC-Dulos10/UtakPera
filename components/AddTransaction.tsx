@@ -190,19 +190,19 @@ function AddButton({
   return (
     <TouchableOpacity
       onPress={() => setIsAddingTransaction(true)}
-      activeOpacity={0.6}
+      activeOpacity={0.3}
       style={{
+        backgroundColor: '#8C4688',
         height: 40,
         flexDirection: "row",
         alignItems: "center",
 
         justifyContent: "center",
-        backgroundColor: "#007BFF20",
         borderRadius: 15,
       }}
     >
-      <MaterialIcons name="add-circle-outline" size={24} color="#007BFF" />
-      <Text style={{ fontWeight: "700", color: "#007BFF", marginLeft: 5 }}>
+      <MaterialIcons name="add-circle-outline" size={24} color="#fff" />
+      <Text style={{ fontWeight: "700", color: "#fff", marginLeft: 5 }}>
         New Entry
       </Text>
     </TouchableOpacity>

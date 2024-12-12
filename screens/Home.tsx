@@ -77,12 +77,17 @@ export default function Home() {
     }
 
   return (
-    <ScrollView contentContainerStyle={{ padding:15, paddingVertical: 17}}>
-      <AddTransaction insertTransaction={insertTransaction} />
+    <ScrollView 
+      contentContainerStyle={{ 
+        padding:15, 
+        paddingVertical: 17,
+        backgroundColor: '#3A2073',
+        }}>
       <TransactionSummary 
         totalExpenses={transactionsByMonth.totalExpenses }
         totalIncome={transactionsByMonth.totalIncome}  
       />
+      <AddTransaction insertTransaction={insertTransaction} />
       <TransactionsList 
         categories={categories}
         transactions={transactions}
@@ -129,7 +134,7 @@ function TransactionSummary({
             {formatMoney(totalExpenses)}
           </Text>
         </Text>
-        <Text style={styles.summaryText}>
+        <Text style={styles.savingsText}>
           Savings:{" "}
           <Text style={getMoneyTextStyle(savings)}>{formatMoney(savings)}</Text>
         </Text>
@@ -142,6 +147,7 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: 16,
     paddingBottom: 7,
+    backgroundColor: '#33102C',
   },
   blur: {
     width: "100%",
@@ -153,15 +159,21 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   periodTitle: {
-    fontSize: 20,
+    fontSize: 32,
     fontWeight: "bold",
-    color: "#333",
+    color: "#fff",
     marginBottom: 15,
   },
   summaryText: {
     fontSize: 18,
-    color: "#333",
+    color: "#fff",
     marginBottom: 10,
   },
+  savingsText: {
+    fontSize: 28,
+    color: "#fff",
+    marginBottom: 10,
+    fontWeight: "bold",
+  }
   // Removed moneyText style since we're now generating it dynamically
 });

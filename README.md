@@ -85,17 +85,46 @@ UtakPera/
 
 Ensure that the `UtakPera.db` file is placed in the `assets` folder. The app will load this database file on startup.
 
+### Converting AAB to APK
+
+If you have an Android App Bundle (AAB) file and need to convert it to an APK file, follow these steps:
+
+1. **Download `bundletool`**:
+   - Download the latest `bundletool` JAR file from the [official GitHub repository](https://github.com/google/bundletool/releases).
+
+2. **Install Java**:
+   - Ensure that you have Java installed on your machine. You can download it from [here](https://www.oracle.com/java/technologies/javase-downloads.html).
+
+3. **Generate APK from AAB**:
+   - Use the `bundletool` to generate an APK from the AAB file.
+
+   ```sh
+   java -jar bundletool-all-1.8.2.jar build-apks --bundle=myapp.aab --output=myapp.apks --mode=universal
+   ```
+
+   - Replace `bundletool-all-1.8.2.jar` with the actual version you downloaded.
+   - Replace `myapp.aab` with the name of your AAB file.
+   - This command will generate a file named `myapp.apks`.
+
+4. **Extract the APK**:
+   - The `myapp.apks` file is a ZIP archive. You can extract it to get the universal APK.
+
+   ```sh
+   unzip myapp.apks -d myapp_apks
+   ```
+
+   - The universal APK will be located in the `myapp_apks/universal` directory.
 
 ## 📦 Dependencies
 
-Expo
-React Native
-SQLite
-React Navigation
+- Expo
+- React Native
+- SQLite
+- React Navigation
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 👥 Contributors
 
@@ -103,5 +132,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-If you have any questions or suggestions, feel free to open an issue or contact me 
-
+If you have any questions or suggestions, feel free to open an issue or contact me at 
